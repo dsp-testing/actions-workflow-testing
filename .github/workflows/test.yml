@@ -9,6 +9,7 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
+        if: github.owner == 'dsp-testing'
         env:
           NOT_FORK: ${{ secrets.NOT_FORK }}
         steps:
