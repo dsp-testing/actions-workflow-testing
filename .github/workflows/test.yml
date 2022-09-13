@@ -10,6 +10,8 @@ jobs:
     test:
         runs-on: ubuntu-latest
         if: github.repository_owner == 'dsp-testing'
+        steps:
+        - run: echo hi
         #env:
         #  NOT_FORK: ${{ secrets.NOT_FORK }}
         #steps:
