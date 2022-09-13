@@ -9,7 +9,7 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        if: github.repository_owner == 'dependabot'
+        if: github.repository_owner == 'dsp-testing'
         steps:
         - uses: actions/checkout@v2
         - run: echo "hello world"
