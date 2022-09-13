@@ -11,7 +11,8 @@ jobs:
         runs-on: ubuntu-latest
         env:
           NOT_FORK: ${{ secrets.NOT_FORK }}
-        if: env.NOT_FORK != ''
         steps:
         - uses: actions/checkout@v2
+          if: env.NOT_FORK != ''
         - run: echo "hello world"
+          if: env.NOT_FORK != ''
