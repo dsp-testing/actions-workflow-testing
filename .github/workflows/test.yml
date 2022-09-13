@@ -9,7 +9,10 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        if: github.repository_owner == 'dsp-testing'
+        env:
+          NOT_FORK: ${{ secrets.NOT_FORK }}
         steps:
         - uses: actions/checkout@v2
+          if: env.NOT_FORK != ''
         - run: echo "hello world"
+          if: env.NOT_FORK != ''
