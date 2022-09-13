@@ -9,7 +9,9 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        if: secrets.NOT_FORK != ''
+        env:
+          NOT_FORK: ${{ secrets.NOT_FORK }}
+        if: env.NOT_FORK != ''
         steps:
         - uses: actions/checkout@v2
         - run: echo "hello world"
